@@ -26,7 +26,7 @@
 	)) }}
 
 	{{ Form::label('users', 'Users') }}
-	{{ Form::text('paragraphs', '5') }}
+	{{ Form::text('users', '5') }}
 	{{ Form::label('birthday', 'Birthday?') }}
 	{{ Form::checkbox('birthday', '0', false) }}
 	{{ Form::label('profile', 'Profile?') }}

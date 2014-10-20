@@ -25,8 +25,7 @@ Route::get('lorem', function()
     //Create a new validator instance.
     $validator = Validator::make(
     	array('paragraph' => $data),	
-    	array('paragraph' => 'numeric'),
-    	array('paragraph' => 'between:5,99')
+    	array('paragraph' => 'numeric|max:100')
     );
     
     if ($validator->fails()) {
@@ -45,16 +44,38 @@ Route::get('lorem', function()
 
 Route::get('users', function() 
 {
+	// Fetch all request data.
+    $data = (Input::get('users'));
+    
+    //Create a new validator instance.
+    $validator = Validator::make(
+    	array('paragraph' => $data),	
+    	array('paragraph' => 'numeric|min:5|max:100')
+    );
+    
+    if ($validator->fails()) {
+       return Redirect::to('/');
+    }
+    
+    echo "Value of data is ".$data.'<br><br>';
+	
+	$faker = Faker::create();
+	//echo $faker->name.'<br><br>';
+	//echo $faker->date($format = 'Y-m-d', $max = 'now').'<br><br>';
+	//echo $faker->text.'<br><br>';
+	
+	for ($i=0; $i < 10; $i++) {
+  		echo $faker->name, "\n";
+  		echo $faker->date($format = 'Y-m-d', $max = 'now')."\n";
+		echo $faker->text."\n";
+	}
+	
 	//return "GET paage for user-gen";
 	return View::make('users');
 	
-	
 });
 
-Route::post('users', function() 
-{
-	return "POST page for user-gen";
-});
+
 
 
 

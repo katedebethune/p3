@@ -5,21 +5,8 @@
 @stop
 
 @section('content')
-	<h2>How many users do you want?</h2>
+	<h2>You requested x fake users:</h2>
 
-	{{ Form::open(array(
-		'url' => '/users',
-		'method' => 'GET'
-	)) }}
-
-	{{ Form::label('users', 'Users') }}
-	{{ Form::text('paragraphs', '5') }}
-	{{ Form::label('birthday', 'Birthday?') }}
-	{{ Form::checkbox('birthday', '0', false) }}
-	{{ Form::label('profile', 'Profile?') }}
-	{{ Form::checkbox('profile', '0', false) }}
-	{{ Form::submit('Get my users!!') }}
-
-	{{ Form::close() }}
+	{{ "Fake users & info will appear here." }}
 
 @stop
