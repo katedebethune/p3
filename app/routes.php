@@ -2,7 +2,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| Application Routes
+| Application Routes - P3
 |--------------------------------------------------------------------------
 |
 | Here is where you can register all of the routes for an application.
@@ -14,30 +14,49 @@
 Route::get('/', function()
 {
 	return View::make('index');
-	//return "Index page for Developer's Best Friend";
+	
 });
 
 Route::get('lorem', function()
 {
-	return View::make('lorem');
-	//return "GET page for lorem";
-});
-
-Route::post('lorem', function()
-{
-	return "POST page for lorem";
+	// Fetch all request data.
+    $data = (Input::get('paragraphs'));
+    
+    //Create a new validator instance.
+    $validator = Validator::make(
+    	array('paragraph' => $data),	
+    	array('paragraph' => 'numeric'),
+    	array('paragraph' => 'between:5,99')
+    );
+    
+    if ($validator->fails()) {
+       return Redirect::to('/');
+    }
+    
+    $generator = new Lorem();
+	$chunks = $generator->getParagraphs($data);
+    
+	return View::make('lorem')
+		->with('paragraphs', $data)
+		->with('chunks', $chunks);
+		
+	
 });
 
 Route::get('users', function() 
 {
 	//return "GET paage for user-gen";
 	return View::make('users');
+	
+	
 });
 
 Route::post('users', function() 
 {
 	return "POST page for user-gen";
 });
+
+
 
 
 
