@@ -45,56 +45,57 @@ Route::get('lorem', function()
 Route::get('users', function() 
 {
 	// Fetch all request data.
-    $num_requested = (Input::get('users'));
-    $fake_users = array(array());
-    $val = 0;
-    
-    //Create a new validator instance.
+    $data = (Input::all());
+	
+	// Create an array to hold fake users
+    $fake_users = array(
+    	$fake_user = array(
+    		));
+     
+    //Create a new validator instance to check that the number of users 
+    //selected is in bounds (between 5 and 99).
     $validator = Validator::make(
-    	array('users' => $num_requested),	
-    	array('users' => 'numeric|min:5|max:100')
+    	array('users' => $data['users']),	
+    	array('users' => 'numeric|min:5|max:99')
     );
     
+    //redirect to home page if validation fails
     if ($validator->fails()) {
-       return Redirect::to('/');
+    	 return Redirect::to('/');
     }
     
-    //echo "Value of data is ".$num_requested.'<br><br>';
-	
+	//create a Faker instance 
 	$faker = Faker::create();
 	
-    // fill the array
-    for($j = 0; $j < $num_requested; $j++)
-        {
-        for($k = 0; $k < 3; $k++) 
-        	if ( $k == 0 ) {
-        		$fake_users[$j][$k] = $faker->name;
-        	}
-        	else if ( $k == 1 ) {
-        		$fake_users[$j][$k] = $faker->date($format = 'Y-m-d', $max = 'now');
-        	}
-        	else {
-        		$fake_users[$j][$k] = $faker->text;
-        	}
+    // fill the array with Faker data
+    for($j = 0; $j < $data['users']; $j++) {
+        
+        $fake_users[$j]["name"] = $faker->name;
+        
+        if ( $data['birthday'] == "1" ) {
+        	$fake_users[$j]["birthday"] = $faker->date($format = 'Y-m-d', $max = 'now');
         }
-	/*   
-    "<br/>------------------<br/>";
-    // print the array  
+        else {
+        	$fake_users[$j]["birthday"] = NULL;
+        }
+        
+        if ( $data['profile'] == "1" ) {
+        	$fake_users[$j]["profile"] = $faker->text;
+        }
+        else {
+        	$fake_users[$j]["profile"] = NULL;
+        }
+    }
     
-    for($j = 0; $j < $num_requested; $j++)
-        {
-        for($k = 0; $k < 3; $k++) 
-        echo $fake_users[$j][$k];
-        echo "<br/>";
-        }
-    */
-
-	
-	//return "GET paage for user-gen";
+    //print_r($fake_users);
+    //echo count($fake_users);
+    
+    //return users View with data.
 	return View::make('users')
 		->with('fake_users', $fake_users)
-		->with('num_requested', $num_requested);
-	
+		->with('num_requested', $data['users'])
+		->with('num_elems', count($data));
+
 });
 
 

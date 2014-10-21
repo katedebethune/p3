@@ -28,12 +28,14 @@
 	{{ Form::label('users', 'Users') }}
 	{{ Form::text('users', '5') }}
 	{{ Form::label('birthday', 'Birthday?') }}
-	{{ Form::checkbox('birthday', '0', false) }}
+	{{ Form::select('birthday', array('1' => 'yes', '0' => 'no'), '1') }}
 	{{ Form::label('profile', 'Profile?') }}
-	{{ Form::checkbox('profile', '0', false) }}
+	{{ Form::select('profile', array('1' => 'yes', '0' => 'no'), '1') }}
 	{{ Form::submit('Get my users!!') }}
 
 	{{ Form::close() }}
 @stop
+
+
 
 
