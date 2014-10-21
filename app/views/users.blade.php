@@ -5,8 +5,12 @@
 @stop
 
 @section('content')
-	<h2>You requested x fake users:</h2>
+	{{ "<h2>You requested ".$num_requested." fake users:</h2>" }}
 
-	{{ "Fake users & info will appear here." }}
+	{{ "<br>" }}
+	
+	@foreach($fake_users as $fake_user)
+		{{ $fake_user[0]."<br>".$fake_user[1]."<br>".$fake_user[2]."<br><br>" }}
+	@endforeach
 
 @stop

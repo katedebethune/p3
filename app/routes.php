@@ -45,35 +45,62 @@ Route::get('lorem', function()
 Route::get('users', function() 
 {
 	// Fetch all request data.
-    $data = (Input::get('users'));
+    $num_requested = (Input::get('users'));
+    $fake_users = array(array());
+    $val = 0;
     
     //Create a new validator instance.
     $validator = Validator::make(
-    	array('paragraph' => $data),	
-    	array('paragraph' => 'numeric|min:5|max:100')
+    	array('users' => $num_requested),	
+    	array('users' => 'numeric|min:5|max:100')
     );
     
     if ($validator->fails()) {
        return Redirect::to('/');
     }
     
-    echo "Value of data is ".$data.'<br><br>';
+    //echo "Value of data is ".$num_requested.'<br><br>';
 	
 	$faker = Faker::create();
-	//echo $faker->name.'<br><br>';
-	//echo $faker->date($format = 'Y-m-d', $max = 'now').'<br><br>';
-	//echo $faker->text.'<br><br>';
 	
-	for ($i=0; $i < 10; $i++) {
-  		echo $faker->name, "\n";
-  		echo $faker->date($format = 'Y-m-d', $max = 'now')."\n";
-		echo $faker->text."\n";
-	}
+    // fill the array
+    for($j = 0; $j < $num_requested; $j++)
+        {
+        for($k = 0; $k < 3; $k++) 
+        	if ( $k == 0 ) {
+        		$fake_users[$j][$k] = $faker->name;
+        	}
+        	else if ( $k == 1 ) {
+        		$fake_users[$j][$k] = $faker->date($format = 'Y-m-d', $max = 'now');
+        	}
+        	else {
+        		$fake_users[$j][$k] = $faker->text;
+        	}
+        }
+	/*   
+    "<br/>------------------<br/>";
+    // print the array  
+    
+    for($j = 0; $j < $num_requested; $j++)
+        {
+        for($k = 0; $k < 3; $k++) 
+        echo $fake_users[$j][$k];
+        echo "<br/>";
+        }
+    */
+
 	
 	//return "GET paage for user-gen";
-	return View::make('users');
+	return View::make('users')
+		->with('fake_users', $fake_users)
+		->with('num_requested', $num_requested);
 	
 });
+
+
+   
+
+
 
 
 
