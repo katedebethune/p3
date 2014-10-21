@@ -4,6 +4,14 @@
 	Lorem Ipsum Generator
 @stop
 
+@section('nav')
+<nav>
+		<ul>
+			<li><a href='/'>Home</a></li>
+		</ul>
+	</nav>
+@stop
+
 @section('content')
 	<h1>Lorem Ipsum Text</h1>
 

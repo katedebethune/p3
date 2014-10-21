@@ -4,6 +4,14 @@
 	Random User Generator
 @stop
 
+@section('nav')
+<nav>
+		<ul>
+			<li><a href='/'>Home</a></li>
+		</ul>
+	</nav>
+@stop
+
 @section('content')
 	{{ "<h2>You requested ".$num_requested." fake users:</h2>" }}
 	
