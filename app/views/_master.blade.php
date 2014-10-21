@@ -3,14 +3,32 @@
 <head>
         <title="Developer's Best Friend"</title>
         <meta charset="utf-8">
-
-        <!-- put in reset -->
-        <link rel="stylesheet" href="pm_reset.css" type="text/css">
-        <link href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/flatly/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="" type="text/css">
+		
+        {{ HTML::style('css/pm_reset.css') }}
+        {{ HTML::style('css/bootstrap.css') }}
+        {{-- Blade Comment --}}
+        {{-- HTML::style('css/styles.css') --}}
+        <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+        
+        <style type="text/css">
+        body {
+    		padding:20px;
+    		background-color: tan;
+    		font-family: 'Raleway', sans-serif;
+		}
+		.logo {
+			width:122px;
+			margin-bottom:20px;
+			display:block;
+		}
+        </style>
+    
+        
 </head>
 <body>
-        <img src="/images/anvil.png" alt="dev best friend logo">
+        <a href='/'><img class='logo' src="/images/anvil.png" alt="dev best friend logo"></a> 
+        <h1>The Developer's Best Friend</h1>
+        <h3>A Set of Tools for Web Development</h3>
 		@yield('nav')
         
         @yield('content')
