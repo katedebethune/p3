@@ -34,5 +34,5 @@
         @yield('content')
         <p>copyright notice</p>
 </body>
-<html>
+
 
