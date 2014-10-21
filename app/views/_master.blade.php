@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <HTML>
 <head>
-        <title="Developer's Best Friend"</title>
+        <title>"Developer's Best Friend"</title>
         <meta charset="utf-8">
 		
         {{ HTML::style('css/pm_reset.css') }}
