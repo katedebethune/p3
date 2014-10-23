@@ -12,10 +12,11 @@
         
         <style type="text/css">
         body {
-    		padding:20px;
     		background-color: burlywood;
     		font-family: 'Raleway', sans-serif;
+    		padding:20px 5px 20px 20px;
 		}
+			
 		.logo {
 			width:122px;
 			margin-bottom:20px;
@@ -57,7 +58,7 @@
 		}
 		
 		.pw_header {
-			width:54%;
+			width:52%;
 		}
 		.pw_output {
 			width:52%;
@@ -77,19 +78,23 @@
         </style> 
 </head>
 <body>
-        <a href='/'><img class='logo' src="/images/anvil.png" alt="dev best friend logo"></a> 
-        <div class="header">
+        
+	
+		<a href='/'><img class='logo' src="/images/anvil.png" alt="dev best friend logo"></a> 
+		<div class="header">
 			<h1>The Developer's Best Friend</h1>
 			<p>&nbsp;&nbsp;A Set of Tools for Web Development</p>
 		</div>
-		
+	
 		<div style="clear: both;"></div>
 		@yield('nav')
+	
+		@yield('content')
+		<br>
+		<br>
+		<p>copyright 2014, SK deBethune, all rights reserved</p>
         
-        @yield('content')
-        <br>
-        <br>
-        <!-- <p>copyright notice</p> -->
+        
 </body>
 
 
