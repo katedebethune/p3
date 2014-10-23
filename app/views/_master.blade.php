@@ -90,8 +90,7 @@
 		@yield('nav')
 	
 		@yield('content')
-		<br>
-		<br>
+		
 		<p>copyright 2014, SK deBethune, all rights reserved</p>
         
         
