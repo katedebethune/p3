@@ -3,13 +3,9 @@
 class PasswordGen {
     	
     	// Properties (Variables)
-		private $file_name; 
-		//private $path;
-    	
-    	//private function loadFile($file_name) {
-    	//	$arr=file($this->$file_name);
-    	//	return $arr;
-    	//}
+		//private $file_name; 
+		//private $path = app_path();
+    
     	
     	private function generateRand($lower_bound, $upper_bound) {
     		$r = rand($lower_bound, ($upper_bound - 1));
@@ -21,7 +17,7 @@ class PasswordGen {
     		$num = $n;
     		$sym = $s;
     		$upp_case = $uc;
-    		$file_name = "/applications/MAMP/htdocs/p3/app/models/sym_num.txt";
+    		$file_name = app_path().'/models/sym_num.txt';
     		
     		//initialize symbol / number array
     		//$sym_num = loadFile("./sym_num.txt");
@@ -70,7 +66,8 @@ class PasswordGen {
     		$symbol = $sym;
     		$number = $num;
     		$upper_case = $uc;
-    		$file_name = "/applications/MAMP/htdocs/p3/app/models/name.txt";
+    		//$file_name = "/applications/MAMP/htdocs/p3/app/models/name.txt";
+    		$file_name = app_path().'/models/name.txt';
     		
     		$selected = array(0);
     		
