@@ -13,13 +13,16 @@
         <style type="text/css">
         body {
     		padding:20px;
-    		background-color: tan;
+    		background-color: burlywood;
     		font-family: 'Raleway', sans-serif;
 		}
 		.logo {
 			width:122px;
 			margin-bottom:20px;
+			margin-right:5px;
+			float:left;
 			display:block;
+			
 		}
 		
 		/* We'll use this class to style the boxes..Gold, 50x50px */
@@ -31,19 +34,39 @@
 			 padding:5px;
 			 background-color:#7F4008; 
 		}
+		.header {
+			/*float:right; */
+		}
+		.resizedTextbox {
+			width: 2em;
+			height: 1.5em; 
+		}
+		
+		input {
+			/* background: white; */
+			padding: .25em;
+			/* font-family: 'Arial', sans-serif; */
+		}
+		
+		label {
+			font-family: 'Arial', sans-serif;;
+		}
 	
         </style> 
 </head>
 <body>
         <a href='/'><img class='logo' src="/images/anvil.png" alt="dev best friend logo"></a> 
-        <h1>The Developer's Best Friend</h1>
-        <h3>A Set of Tools for Web Development</h3>
+        <div class="header">
+			<h1>The Developer's Best Friend</h1>
+			<p>&nbsp&nbspA Set of Tools for Web Development</p>
+		</div>
+		<div style="clear: both;"></div>
 		@yield('nav')
         
         @yield('content')
         <br>
         <br>
-        <p>copyright notice</p>
+        <!-- <p>copyright notice</p> -->
 </body>
 
 

@@ -107,18 +107,57 @@ Route::get('form', function(){
 Route::any('color_extractor', function(){
  //var_dump(Input::file('file'));
  $file = Input::file('file')->getRealPath();
+ $name = Input::file('file')->getClientOriginalName();
+ 
+ //Create a new validator instance.
+$validator = Validator::make(
+	array('file' => $name),	
+	array('file' => 'regex:[[^\s]+(\.png)]')
+);
+
+//$errors = $validator->messages();
+//var_dump($errors);
+	
+
+if ($validator->fails()) {
+   return Redirect::to('/');
+   //foreach($errors as $message) {
+   	//	echo $message;
+   	//}
+   //return Redirect::to('/')->withErrors($validator);
+}
+
+
  
  $client = new ColorExtract;
  $image = $client->loadPng($file);
  $palette = $image->extract(3);
- //echo "Here are the 3 most used colors in your image ";
-//	foreach($palette as $color) {
-//		echo($color)."<br>";
-//	}
 	
  return View::make('color_extractor')
 		->with('palette', $palette);
 
+});
+
+Route::get('password_gen', function() {
+	
+	// Fetch all request data.
+    $data = (Input::all());
+    
+    $validator = Validator::make(
+    	array('num_words' => $data['num_words']),	
+    	array('num_words' => 'numeric|min:3|max:8')
+    );
+    
+    //redirect to home page if validation fails
+    if ($validator->fails()) {
+    	 return Redirect::to('/');
+    }
+    
+    $generator = new PasswordGen();
+	$pwd = $generator->pickPassword($data['num_words'],$data['symbol'],$data['digit'],$data['cap']);
+    
+    return View::make('password_gen')
+		->with('pwd', $pwd);
 });
 
 ?>

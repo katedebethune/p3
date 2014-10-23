@@ -14,12 +14,13 @@
 			<li><a href='/'>Back</a></li>
 		</ul>
 	</nav>
+
 @stop
 
 @section('content')
 	<h1>Color Extractor</h1>
 
-	<h2>The most prevalent colors in your image are:</h2>
+	<h2>Your color palette is:</h2>
 	{{-- HTML::decode(Form::button('<i class="icon-ok"></i> Save', array('class'=>'btn btn-success'))) --}}
 		@foreach ($palette as $color)
     		{{-- <div class='box' style="color:".$color.";> --}}
@@ -27,6 +28,8 @@
     			{{ $color }}
     		</div>
 		@endforeach
+	<br>
+	
 	
 	
 @stop
