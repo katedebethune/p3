@@ -48,7 +48,7 @@
     @endforeach
     </ul>
   
-  	{{ Form::label('file','Get a palette from your png image',array('id'=>'','class'=>'')) }}
+  	{{ Form::label('file','Get a palette from your png image') }}
   	{{ Form::file('file','',array('id'=>'','class'=>'')) }}
   	<br/>
   	<!-- submit buttons -->

@@ -80,7 +80,7 @@
         <a href='/'><img class='logo' src="/images/anvil.png" alt="dev best friend logo"></a> 
         <div class="header">
 			<h1>The Developer's Best Friend</h1>
-			<p>&nbsp&nbspA Set of Tools for Web Development</p>
+			<p>&nbsp;&nbsp;A Set of Tools for Web Development</p>
 		</div>
 		
 		<div style="clear: both;"></div>
