@@ -21,9 +21,18 @@
 			margin-bottom:20px;
 			display:block;
 		}
-        </style>
-    
-        
+		
+		/* We'll use this class to style the boxes..Gold, 50x50px */
+		.box {
+			 width:150px;
+			 height:150px;
+			 float:left;
+			 margin:4px;
+			 padding:5px;
+			 background-color:#7F4008; 
+		}
+	
+        </style> 
 </head>
 <body>
         <a href='/'><img class='logo' src="/images/anvil.png" alt="dev best friend logo"></a> 
@@ -32,6 +41,8 @@
 		@yield('nav')
         
         @yield('content')
+        <br>
+        <br>
         <p>copyright notice</p>
 </body>
 

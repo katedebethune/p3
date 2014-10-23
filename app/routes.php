@@ -99,6 +99,31 @@ Route::get('users', function()
 });
 
 
+
+Route::get('form', function(){
+ return View::make('form');
+});
+
+Route::any('color_extractor', function(){
+ //var_dump(Input::file('file'));
+ $file = Input::file('file')->getRealPath();
+ 
+ $client = new ColorExtract;
+ $image = $client->loadPng($file);
+ $palette = $image->extract(3);
+ //echo "Here are the 3 most used colors in your image ";
+//	foreach($palette as $color) {
+//		echo($color)."<br>";
+//	}
+	
+ return View::make('color_extractor')
+		->with('palette', $palette);
+
+});
+
+?>
+
+
    
 
 

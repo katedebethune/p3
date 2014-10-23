@@ -34,7 +34,26 @@
 	{{ Form::submit('Get my users!!') }}
 
 	{{ Form::close() }}
+	
+	<h2>Color Extractor</h2>
+	<h3>Get the most prevalent colors from a png image (up to 3)!</h3>
+	{{ Form::open(array('url'=>'color_extractor','files'=>true)) }}
+  
+  {{ Form::label('file','File',array('id'=>'','class'=>'')) }}
+  {{ Form::file('file','',array('id'=>'','class'=>'')) }}
+  <br/>
+  <!-- submit buttons -->
+  {{ Form::submit('Save') }}
+  
+  <!-- reset buttons -->
+  {{ Form::reset('Reset') }}
+  
+  {{ Form::close() }}
+	
 @stop
+
+
+ 
 
 
 
