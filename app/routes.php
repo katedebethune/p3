@@ -126,12 +126,10 @@ if ($validator->fails()) {
    	//}
    //return Redirect::to('/')->withErrors($validator);
 }
-
-
  
  $client = new ColorExtract;
  $image = $client->loadPng($file);
- $palette = $image->extract(3);
+ $palette = $image->extract(5);
 	
  return View::make('color_extractor')
 		->with('palette', $palette);

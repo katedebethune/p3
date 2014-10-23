@@ -18,7 +18,6 @@
 @stop
 
 @section('content')
-	<h1>Color Extractor</h1>
 
 	<h2>Your color palette is:</h2>
 	{{-- HTML::decode(Form::button('<i class="icon-ok"></i> Save', array('class'=>'btn btn-success'))) --}}

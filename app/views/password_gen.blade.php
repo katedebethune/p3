@@ -13,10 +13,13 @@
 @stop
 
 @section('content')
-	<h1>XKCD-style Password Generator</h1>
 
-	<h2>Here is your randomly generated password</h2>
+	<div class="pw_header">
+		<h2>Here is your randomly generated password:</h2>
+	</div>
 	
-	{{ $pwd; }}
+	<div class="pw_output">
+		<h2> {{ $pwd; }} </h2>
+	</div>
 	
 @stop

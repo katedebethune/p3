@@ -49,8 +49,30 @@
 		}
 		
 		label {
-			font-family: 'Arial', sans-serif;;
+			font-family: 'Arial', sans-serif;
 		}
+		.names {
+			font-size: 1.25em;
+			font-weight: bold;
+		}
+		
+		.pw_header {
+			width:54%;
+		}
+		.pw_output {
+			width:52%;
+			height:20%;
+			float:left;
+			background-color: #A1A1A1;
+			color: white;
+			display:block;
+			margin: 0 auto;
+			padding: 20px;
+			text-align: center;
+		}
+			
+			
+			
 	
         </style> 
 </head>
@@ -60,6 +82,7 @@
 			<h1>The Developer's Best Friend</h1>
 			<p>&nbsp&nbspA Set of Tools for Web Development</p>
 		</div>
+		
 		<div style="clear: both;"></div>
 		@yield('nav')
         
@@ -68,5 +91,7 @@
         <br>
         <!-- <p>copyright notice</p> -->
 </body>
+
+
 
 

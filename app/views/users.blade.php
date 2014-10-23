@@ -16,7 +16,9 @@
 	{{ "<h2>You requested ".$num_requested." fake users:</h2>" }}
 	
 	@foreach($fake_users as $fake_user)
+		<div class="names">
 		{{ $fake_user['name']."<br>" }}
+		</div>
 		
 		@if ( $fake_user['birthday'] != NULL )
 			{{ $fake_user['birthday']."<br>" }}

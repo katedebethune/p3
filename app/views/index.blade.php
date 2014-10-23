@@ -39,7 +39,7 @@
 	{{ Form::close() }}
 	
 	<h3>Color Extractor</h3>
-	<p>Provides a color palette from any png image (outputs up to 3 colors).</p>
+	<p>Provides a color palette from any png image (outputs up to 5 colors).</p>
 	{{ Form::open(array('url'=>'color_extractor','files'=>true)) }}
 	
 	<ul class="errors">
