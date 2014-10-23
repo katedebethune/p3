@@ -14,8 +14,18 @@
         body {
     		background-color: burlywood;
     		font-family: 'Raleway', sans-serif;
-    		padding:20px 5px 20px 20px;
+    		padding:20px 40px 20px 20px;
 		}
+		
+		hr { 
+			display: block;
+			margin-top: 1em;
+			margin-bottom: 0.5em;
+			margin-left: auto;
+			margin-right: 40%;
+			/* border-style: inset; */
+			border-width: 1px;
+		} 
 			
 		.logo {
 			width:122px;
