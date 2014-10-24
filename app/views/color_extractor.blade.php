@@ -4,10 +4,6 @@
 	Color Extractor
 @stop
 
-<head>
-	
-</head>
-
 @section('nav')
 	{{ HTML::nav() }}
 @stop
@@ -16,7 +12,6 @@
 
 	<h2>Your color palette is:</h2>
 		@foreach ($palette as $color)
-    		{{-- <div class='box' style="color:".$color.";> --}}
     		<div class='box' style="background-color:{{ $color }};">
     			{{ $color }}
     		</div>

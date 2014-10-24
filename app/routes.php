@@ -95,11 +95,6 @@ Route::get('users', function()
 });
 
 
-
-Route::get('form', function(){
- return View::make('form');
-});
-
 Route::any('color_extractor', function(){
  //var_dump(Input::file('file'));
  $file = Input::file('file')->getRealPath();
@@ -111,6 +106,7 @@ $validator = Validator::make(
 	array('file' => 'regex:[[^\s]+(\.png)]')
 );
 
+//redirect to home page if validation fails
 if ($validator->fails()) {
    return Redirect::to('/');
 }

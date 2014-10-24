@@ -14,7 +14,7 @@
 	
 	@foreach($fake_users as $fake_user)
 		<div class="names">
-		{{ $fake_user['name']."<br>" }}
+			{{ $fake_user['name']."<br>" }}
 		</div>
 		
 		@if ( $fake_user['birthday'] != NULL )
