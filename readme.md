@@ -1,25 +1,58 @@
-## Laravel PHP Framework
+csci e15 project 3 <br />
+The Developer's Best Friend<br />
+Kate de Bethune <br />
+October 23, 2014<br />
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+# live URL for project
+http://p3.kdeb-csci-e15.me
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+# Description of project
+Project demonstrates an understanding of the following: <br />
+* Creating a new Laravel app <br />
+* Installing & using Composer packages <br />
+* Routing & Views <br />
+* Deploying a Laravel app on a live server <br />
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+Required features: <br />
+* A Lorem Ipsum Generator & a Random User Generator <br />
+* A landing page with links to the two tools, or with the tools present on the page. <br />
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Extra functionality included: <br />
+This implementation of the Developer's Best Friend includes the following additional features: <br />
 
-## Official Documentation
+* Random Users provides options for birthdate and a profile. If all options are selected, it also generates an array presentation of the data for inclusion in script to seed a database. This is a prototype at this stage. <br />
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
+* xkcd generator has been incorporated as the PasswordGen class. <br />
 
-### Contributing To Laravel
+* Color Extractor: an additional feature is included, allowing the end user to upload a png and derive a palette of hex colors (up to five). <br />
 
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+* Validation: validation has been incorporated in routes.php for text fields and in the case of the Color Extractor, for the type of file being uploaded (i.e. file must end in '.png'. All other fields are selects of 'yes' and 'no', and so have not been included for validation.
 
-### License
+# Demo information
+A brief description of how to use each feature is contained <br />
+within the content of the index page. <br />
+<br />
+Site will be demonstrated in section on Oct 29. <br />
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+# Details for instructor / TA <br />
+
+#Outside packages and credits
+
+1. Wordlist for xkcd password generator is courtesy of <br />
+https://www.englishclub.com/vocabulary/common-words-5000.htm <br />
+It was converted from html to txt using sed commands. <br />
+2. html reset code is courtesy of <br />
+   http://meyerweb.com/eric/tools/css/reset/ <br />
+   v2.0 | 20110126 <br />
+   License: none (public domain) <br />
+3. CSS framework courtesy of bootstrap: <br />
+	http://getbootstrap.com <br />
+4. Fake users package courtesy of fzaninotto/faker <br />
+https://packagist.org/packages/fzaninotto/faker <br />
+5. Lorem Ipsum package courtesy of badcow/LoremIpsum <br />
+https://packagist.org/packages/badcow/lorem-ipsum <br />
+6. Color Extractor package courtesy of league/color-extractor
+https://packagist.org/packages/league/color-extractor
+7. The inspiration for XKCD-style passwords courtesy of xkcd.com <br />
+  
+
