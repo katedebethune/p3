@@ -5,11 +5,7 @@
 @stop
 
 @section('nav')
-<nav>
-		<ul>
-			<li><a href='/'><-Back</a></li>
-		</ul>
-	</nav>
+	{{ HTML::nav() }}
 @stop
 
 @section('content')
