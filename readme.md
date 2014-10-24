@@ -35,6 +35,7 @@ within the content of the index page. <br />
 Site will be demonstrated in section on Oct 29. <br />
 
 # Details for instructor / TA <br />
+http://p3.kdeb-csci-e15.me/color_extractor could not be checked by the w3c validator; attempts to validate it produced a 500 error. All other pages produced no validation errors.
 
 #Outside packages and credits
 
