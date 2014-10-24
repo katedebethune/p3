@@ -86,10 +86,6 @@ Route::get('users', function()
         	$fake_users[$j]["profile"] = NULL;
         }
     }
-    
-    //print_r($fake_users);
-    //echo count($fake_users);
-    
     //return users View with data.
 	return View::make('users')
 		->with('fake_users', $fake_users)
@@ -115,16 +111,8 @@ $validator = Validator::make(
 	array('file' => 'regex:[[^\s]+(\.png)]')
 );
 
-//$errors = $validator->messages();
-//var_dump($errors);
-	
-
 if ($validator->fails()) {
    return Redirect::to('/');
-   //foreach($errors as $message) {
-   	//	echo $message;
-   	//}
-   //return Redirect::to('/')->withErrors($validator);
 }
  
  $client = new ColorExtract;
