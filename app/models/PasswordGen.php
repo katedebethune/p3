@@ -1,12 +1,7 @@
  <?php 
 
 class PasswordGen {
-    	
-    	// Properties (Variables)
-		//private $file_name; 
-		//private $path = app_path();
-    
-    	
+        	
     	private function generateRand($lower_bound, $upper_bound) {
     		$r = rand($lower_bound, ($upper_bound - 1));
     		return $r;
@@ -17,14 +12,7 @@ class PasswordGen {
     		$num = $n;
     		$sym = $s;
     		$upp_case = $uc;
-    		$file_name = app_path().'/models/sym_num.txt';
-    		
-    		//initialize symbol / number array
-    		//$sym_num = loadFile("./sym_num.txt");
-    		$sym_num = ($arr=file($file_name));
-    		
-    		//generate random symbol
-    		$symbol = $sym_num[$this->generateRand(11, 20)];
+    		$file_name = app_path().'/models/sym.txt';
     		
     		//concatenate words with -
     		$i = 0;
@@ -47,6 +35,11 @@ class PasswordGen {
     		
     		//add symbol, if requested
     		if ($sym == 1) {
+    			//initialize symbol array
+    			$sym = ($arr=file($file_name));
+    			//generate random symbol
+    			$symbol = $sym[$this->generateRand(0, count($sym))];
+    			//add to string
     			$str = $str.$symbol;
     		}
     		
@@ -60,26 +53,21 @@ class PasswordGen {
     	}
     	
     	
-    	/*function pickWords($arr) */
+    	//function pickPassword($arr)
     	public function pickPassword($num_w, $sym, $num, $uc) {
     		$num_words = $num_w;
     		$symbol = $sym;
     		$number = $num;
     		$upper_case = $uc;
-    		//$file_name = "/applications/MAMP/htdocs/p3/app/models/name.txt";
     		$file_name = app_path().'/models/name.txt';
     		
     		$selected = array(0);
     		
     		//load dictionary
-    		//$dict = $this->loadFile("./name.txt");
-    		//$dict = $this->loadFile("/applications/MAMP/htdocs/p3/app/models/name.txt");
-    		//$dict = $this->loadFile($file_name);
-    		$dict = ($arr=file($file_name));
+    		$dict = ($arr = file($file_name));
     		//calculate size
     		$dict_size = count($dict);
-    		//create random number
-    		//within array index bounds
+    		//create random number within array index bounds
     		$rand = $this->generateRand(0, $dict_size);
     		$words = array();
     		
@@ -87,11 +75,9 @@ class PasswordGen {
     		for ($i = 0; $i < $dict_size; $i++) {
     			array_push($selected, 0);
     		}
-    		//print count($selected);
     		
     		
-    		//while loop to pick words
-    		//doesn't allow dupes
+    		//while loop picks words, doesn't allow dupes
     		$j = 0;
     		while ($j < $num_words) {
     			if ($selected[$rand] == 1) {
