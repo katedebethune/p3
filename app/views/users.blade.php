@@ -7,13 +7,14 @@
 @section('nav')
 <nav>
 		<ul>
-			<li><a href='/'>Back</a></li>
+			<li><a href='/'><-Back</a></li>
 		</ul>
 	</nav>
 @stop
 
 @section('content')
 	{{ "<h2>You requested ".$num_requested." fake users:</h2>" }}
+	
 	
 	@foreach($fake_users as $fake_user)
 		<div class="names">
@@ -31,6 +32,18 @@
 		{{ "<br>" }}
 		
 	@endforeach
+	
+	{{-- if all fields are present, outputs arrays for a database script --}}
+	@if (( $fake_user['birthday'] != NULL ) && ( $fake_user['profile'] != NULL ))
+	{{ "<h2>Data in Array Form</h2>" }}
+		@foreach($fake_users as $fake_user)
+		
+		{{ "array('name'=>\"".$fake_user['name']."\",'birthday'=>\"".$fake_user['birthday']."\",'profile'=>\"".$fake_user['profile']."\") " }}
+		
+		{{ "<br>" }}
+		
+		@endforeach
+	@endif
 	
 	
 	

@@ -26,6 +26,10 @@
 			/* border-style: inset; */
 			border-width: 1px;
 		} 
+		
+		p {
+			margin-right: 40%;
+		}
 			
 		.logo {
 			width:122px;
@@ -43,7 +47,8 @@
 			 float:left;
 			 margin:4px;
 			 padding:5px;
-			 background-color:#7F4008; 
+			 background-color:#7F4008;
+			 margin-bottom:30px; 
 		}
 		.header {
 			/*float:right; */
@@ -80,6 +85,12 @@
 			margin: 0 auto;
 			padding: 20px;
 			text-align: center;
+			margin-bottom: 30px;
+		}
+		.footer {
+			
+			clear: both;
+			
 		}
 			
 			
@@ -100,8 +111,10 @@
 		@yield('nav')
 	
 		@yield('content')
-		
-		<p>copyright 2014, SK deBethune, all rights reserved</p>
+		<br>
+		<div class="footer">
+			<p>copyright 2014, SK deBethune, all rights reserved</p>
+		</div>
         
         
 </body>

@@ -7,7 +7,7 @@
 @section('nav')
 <nav>
 		<ul>
-			<li><a href='/'>Back</a></li>
+			<li><a href='/'><-Back</a></li>
 		</ul>
 	</nav>
 @stop
@@ -15,7 +15,7 @@
 @section('content')
 
 	<div class="pw_header">
-		<h2>Here is your randomly generated password:</h2>
+		<h2>Here is your password:</h2>
 	</div>
 	
 	<div class="pw_output">

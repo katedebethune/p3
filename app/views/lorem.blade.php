@@ -7,7 +7,7 @@
 @section('nav')
 <nav>
 		<ul>
-			<li><a href='/'>Back</a></li>
+			<li><a href='/'><-Back</a></li>
 		</ul>
 	</nav>
 @stop

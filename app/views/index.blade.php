@@ -31,7 +31,8 @@
 	
 	<h3>Random User Generator</h3>
 	<p>Generate fake users for app testing.</p> 
-	<p>Select from 5 to 99 fake users, with optional birthdates and profiles.</p>
+	<p>Select from 5 to 99 fake users, with optional birthdates and profiles. 
+	If all three options are selected, also outputs arrays for db script.</p>
 	
 	{{ Form::open(array(
 		'url' => '/users',
