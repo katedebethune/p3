@@ -32,7 +32,8 @@ This implementation of the Developer's Best Friend includes the following additi
 A brief description of how to use each feature is contained <br />
 within the content of the index page. <br />
 <br />
-Site will be demonstrated in section on Oct 29. <br />
+Per Katherine's instructions on 10/28, online demo has been uploaded to <br />
+http://screencast.com/t/6nT8dWWvW6 <br />
 
 # Details for instructor / TA <br />
 http://p3.kdeb-csci-e15.me/color_extractor could not be checked by the w3c validator; attempts to validate it produced a 500 error. All other pages produced no validation errors.

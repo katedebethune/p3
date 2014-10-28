@@ -25,7 +25,7 @@ Route::get('lorem', function()
     //Create a new validator instance.
     $validator = Validator::make(
     	array('paragraph' => $data),	
-    	array('paragraph' => 'numeric|max:100')
+    	array('paragraph' => 'numeric|min:1|max:100')
     );
     
     if ($validator->fails()) {
